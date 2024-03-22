@@ -60,7 +60,7 @@ class _STPayTamaraButtonState extends State<STPayTamaraButton> {
           children: [
             const Text("Pay with"),
             const SizedBox(
-              width: 10,
+              width: 11,
             ),
             Image.asset(
               width: (widget.width != null) ? widget.width! / 2 : 75,
