@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:st_tamara_sdk/src/styles/constants.dart';
+import 'package:st_tamara_sdk/src/styles/text_styles.dart';
 
 enum TamaraButtonStyle { base, gradient }
 
@@ -58,17 +59,25 @@ class _STPayTamaraButtonState extends State<STPayTamaraButton> {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            const Text("Pay with"),
-            const SizedBox(
-              width: 10,
-            ),
-            Image.asset(
-              width: (widget.width != null) ? widget.width! / 2 : 75,
-              getTamaraLogo(
-                buttonStyle: widget.tamaraButtonStyle,
-                buttonIsArabic: widget.buttonIsArabic,
+            Expanded(
+              flex: 6,
+              child: FittedBox(
+                child: Text(
+                  "Pay with",
+                  style: TextStyles.black,
+                ),
               ),
-              fit: BoxFit.contain,
+            ),
+            Expanded(flex: 1, child: SizedBox.shrink()),
+            Expanded(
+              flex: 10,
+              child: Image.asset(
+                getTamaraLogo(
+                  buttonStyle: widget.tamaraButtonStyle,
+                  buttonIsArabic: widget.buttonIsArabic,
+                ),
+                fit: BoxFit.contain,
+              ),
             ),
           ],
         ),
